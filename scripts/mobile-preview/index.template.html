@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>手机效果预览 · All In 具身</title>
+  <style>/*__CSS__*/</style>
+</head>
+<body>
+  <header class="page-head">
+    <div><div class="eyebrow"><span class="brand-mark">A</span> ALL IN 具身 <span class="local-tag">本地预览</span></div><h1>手机效果预览</h1></div>
+    <div class="head-actions"><a id="savedImage" class="text-link" hidden target="_blank">查看检查图 ↗</a><label class="file-button">选择其他视频<input id="fileInput" type="file" accept="video/*"></label><button id="exportButton" class="primary">保存检查图</button></div>
+  </header>
+  <div class="workbar">
+    <div class="platform-tabs" role="tablist" aria-label="模拟平台">
+      <button role="tab" data-platform="douyin" aria-selected="true">抖音</button>
+      <button role="tab" data-platform="wechat" aria-selected="false">微信视频号</button>
+      <button role="tab" data-platform="xhs" aria-selected="false">小红书</button>
+    </div>
+    <label class="compare-toggle"><input id="compare" type="checkbox">三平台同帧对比</label>
+  </div>
+  <main class="workspace">
+    <section class="preview-stage" aria-label="手机模拟画面">
+      <div class="stage-title"><span id="stageTitle">抖音 · 观看界面</span><span class="status-dot" id="status" role="status">正在读取视频</span></div>
+      <div id="phoneGrid" class="phone-grid">
+        <figure class="phone-item" data-phone="douyin"><figcaption>抖音</figcaption><div class="phone-shell"><canvas aria-label="抖音视频模拟画面" id="canvas-douyin"></canvas></div></figure>
+        <figure class="phone-item" data-phone="wechat" hidden><figcaption>微信视频号</figcaption><div class="phone-shell"><canvas aria-label="微信视频号视频模拟画面" id="canvas-wechat"></canvas></div></figure>
+        <figure class="phone-item" data-phone="xhs" hidden><figcaption>小红书</figcaption><div class="phone-shell"><canvas aria-label="小红书视频模拟画面" id="canvas-xhs"></canvas></div></figure>
+      </div>
+      <div class="playback">
+        <div class="transport"><button id="playButton" class="play" aria-label="播放">▶</button><button id="backButton" aria-label="后退5秒">−5s</button><button id="nextButton" aria-label="前进5秒">+5s</button><output id="timeReadout">00:00 / 00:00</output><label class="mute-control"><input id="muted" type="checkbox" checked>静音</label></div>
+        <input id="timeline" type="range" min="0" max="1" step="0.01" value="0" aria-label="播放进度">
+        <div class="checkpoint-line"><span>检查位置</span><div id="checkpoints" class="checkpoints"></div></div>
+      </div>
+    </section>
+    <aside class="inspector" aria-label="预览设置">
+      <div class="asset-info"><span class="eyebrow">当前成片</span><h2 id="assetTitle"></h2><p id="assetSpec"></p></div>
+      <label class="field">手机尺寸<select id="device"><option value="iphone">iPhone · 390 × 844</option><option value="android">安卓长屏 · 412 × 915</option><option value="small">小屏 · 375 × 667</option></select></label>
+      <label class="field">画面显示<select id="fit"><option value="cover">铺满观看区（可能裁左右）</option><option value="contain">完整画面（保留黑边）</option></select></label>
+      <label class="field">预览大小<select id="zoom"><option value="fit">适应窗口</option><option value="actual">手机实际逻辑尺寸</option></select></label>
+      <div class="switches"><label><span>叠加平台界面</span><input id="chrome" type="checkbox" checked></label><label><span>展开发布文案</span><input id="expanded" type="checkbox"></label><label><span>参考安全区</span><input id="safe" type="checkbox"></label><label><span>查看封面</span><input id="coverMode" type="checkbox"></label></div>
+      <form id="jumpForm" class="jump"><label for="jumpTime">跳到时间</label><div><input id="jumpTime" placeholder="例如 08:30" inputmode="decimal" aria-label="跳转时间"><button type="submit">跳转</button></div></form>
+      <div class="review-notes"><h3>看这三处</h3><p><b>上方</b>　标题、人物是否顶到导航。</p><p><b>右侧</b>　公式、字幕是否碰到操作栏。</p><p><b>下方</b>　字幕是否与作者和文案重叠。</p></div>
+      <p class="scope-note">界面为模拟参考。实际显示会随机型、App版本、裁切方式和文案长度变化。</p>
+      <a href="video.mp4" download id="downloadVideo" class="text-link">打开／保存当前 MP4 ↗</a>
+    </aside>
+  </main>
+  <footer class="page-foot"><span>ALL IN 具身 · 导出后的手机检查</span><span id="footerTime">所有平台共用同一帧</span></footer>
+  <video id="sourceVideo" preload="auto" playsinline muted aria-hidden="true" hidden></video>
+  <script>window.PREVIEW_CONFIG=/*__CONFIG__*/;</script>
+  <script>/*__JS__*/</script>
+</body>
+</html>
