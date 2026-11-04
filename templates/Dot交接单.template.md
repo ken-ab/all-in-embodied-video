@@ -6,7 +6,7 @@
 |---|---|
 | 系列编号与标题 |  |
 | 项目根（含 `.cheat-state.json`） |  |
-| cheat 源码目录 `<cheat>` |  |
+| All In 具身 skill 目录（`<CHEAT_DIR>` 为其下 `cheat/`） |  |
 | 成片与实际封面 |  |
 | 归档位置 |  |
 | cheat 预测文件 | `predictions/....md` 或「本期无预测」 |
