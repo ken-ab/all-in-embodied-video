@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.DS_Store
+/scripts/mobile-preview/registry.json
+/scripts/mobile-preview/.server.json
+/scripts/mobile-preview/*.log
