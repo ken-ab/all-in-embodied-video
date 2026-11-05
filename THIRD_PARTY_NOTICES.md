@@ -16,3 +16,4 @@
 5. **修复 `douyin-session`、`xhs-explore`、`bilibili-stat`、`linkedin-session` 的 `run.sh`。** 上游在目标文件夹的上一级目录里查找第一个比目标文件夹新的 `report.md` 复制过来，`douyin-session` 随后删除找到的目录。连续多期时可能把别的期的报告当成本期结果并删除那一期的数据，抓取失败时还会返回成功。现在 `review.py` 写入项目 `.cheat-cache/` 下的私有临时目录，只接受恰好一份报告，抓取前删除旧报告，`review.py` 失败时返回 3，运行结束后只清理这个临时目录。同时支持 `CHEAT_PYTHON` 覆盖解释器（与 `wechat-channels` 一致），回归测试见 `cheat/adapters/perf-data/test_run_isolation.sh`。
 6. 适配器 README、`cheat-migrate`、`cheat-seed` 和 `migrations/1.3-to-1.4.md` 中的安装路径说明相应更新。
 7. `cheat-init` 和 `cheat-learn-from` 开头各加一段说明：由 All In 具身调用时先读 `references/账号建档.md`，按其中的预设和数据来源执行。
+8. `cheat-retro` 开头加入「无人值守模式」：定时任务触发时，所有要询问用户的地方改为写进 `待确认.md` 或记延期状态，不当场等待；评论不足时标 `comments_unavailable` 继续完成复盘。

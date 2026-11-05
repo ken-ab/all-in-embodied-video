@@ -7,6 +7,17 @@ allowed-tools: Bash(*), Read, Edit, Write, Glob, Grep, Skill
 
 # /cheat-retro — 数据回收与复盘
 
+> **无人值守模式**（Dot 等定时任务触发，任务指令里写了「无人值守」时）：本流程里所有「询问用户」都不当场等待，按下表处理后继续；需要创作者回答的事写进项目根 `待确认.md`（格式见 All In 具身的 `templates/待确认.template.md`），下次开工时处理。
+>
+> | 原流程会问的 | 无人值守时 |
+> |---|---|
+> | Phase 0 时间窗口不足，是否仍坚持复盘 | 不复盘，不标 `early_retro`，记「未到窗口」后结束 |
+> | Phase 0 复盘段已填，补充还是修正 | 已有同一平台的正式复盘 → 去重，结束；否则按「补充」追加 |
+> | Phase 1 adapter 失败，改 manual 粘数据 | 不降级。退出码 1 记 `deferred_login`，其他记 `deferred_access`，结束，等 Dot 补查 |
+> | Phase 1 评论不足 / 未抓到，要求粘 top 评论 | 标 `comments_unavailable`，照常完成复盘；在 `待确认.md` 记一条「热门评论待补」 |
+> | Phase 4b 是否把 pattern 候选追加到 script_patterns.md | 不追加；候选原文写进 `待确认.md`。`rubric-memo.md` 照常写 |
+> | Phase 7 提议 bump | 不执行；提议原文写进 `待确认.md` |
+
 抓 T+N 天的实际表现 → 对比预测 → 提炼新观察 → 写入 rubric-memo.md。**只追加 `## 复盘` 段，绝不改预测段**。`rubric_notes.md` 是 blind 白名单，只能保存通用公式、维度定义和抽象规则，不能写入样本名、实绩、评论、链接或播放/阅读数。
 
 ## Overview
