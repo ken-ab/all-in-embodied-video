@@ -7,6 +7,8 @@ allowed-tools: Bash(*), Read, Write, Edit, Glob, WebFetch, Skill
 
 # /cheat-init — 首次 onboarding
 
+> **由 All In 具身调用时**：先读 [账号建档](../../../references/账号建档.md)。那里已预设 Q1、Q3、Q4、Q5，并规定历史作品的稿子直接用往期 `口播稿.md`；按它执行，其余照本流程。
+
 让用户从零到能跑第一篇预测，全程 ≤ 5 分钟（没发过历史的）或 ≤ 10 分钟（已发过、要 import 历史的）。
 
 ## Overview

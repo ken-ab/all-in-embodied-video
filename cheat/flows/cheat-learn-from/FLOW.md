@@ -7,6 +7,8 @@ allowed-tools: Bash(*), Read, Write, Edit, Glob, WebFetch, Skill
 
 # /cheat-learn-from — 对标账号导入
 
+> **由 All In 具身调用时**：先读 [账号建档](../../../references/账号建档.md) 第 3 节。那里规定了对标账号的选法、样本数、默认的稿子和数据来源；按它执行，其余照本流程。
+
 工具早期最重要的信号源是**对标账号**——你 init 完没数据，rubric 等权 v0 等于占星。但如果你能找一个你想做成那样的账号，导入 5-10 条它的高/中/低样本，工具就有了 anchor。
 
 后期当你自己 calibration_samples ≥ 10 时，benchmark 影响自然减弱——你的真实数据成为主要信号源。但 benchmark.md **不删**，仍是 cheat-seed brainstorm 的 reference frame。
